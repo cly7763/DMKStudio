@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DMK Studio - Creative Web Apps & Tools</title>
+  <meta name="description" content="DMK Studio - 웹 기반 음악 화성학 도구, 생산성 유틸리티, 미디어 콘텐츠 및 창의적인 웹 서비스를 제작하는 크리에이티브 스튜디오입니다." />
+  <link rel="canonical" href="https://createdmk.com/" />
+
+  <!-- 애드센스 코드 (필요 시 주석 해제) -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e293b;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo-badge {
+      font-size: 0.7rem;
+      font-weight: 800;
+      background: #f59e0b;
+      color: #0f172a;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    nav {
+      display: flex;
+      gap: 18px;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #38bdf8;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      flex: 1;
+    }
+    .hero {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .card h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #f8fafc;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #38bdf8;
+    }
+    .about-box {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+    }
+    .about-box h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 12px;
+    }
+    .about-box p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+    footer {
+      border-top: 1px solid #1e293b;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.85rem;
+      background: #0b1120;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: #38bdf8;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <span>DMK STUDIO</span>
+      <span class="logo-badge">LAB</span>
+    </div>
+    <nav>
+      <a href="https://chordhelper.createdmk.com/" target="_blank" rel="noopener noreferrer">ChordHelper</a>
+      <a href="https://emag01.com/" target="_blank" rel="noopener noreferrer">EMAG01</a>
+      <a href="https://moki.kr/" target="_blank" rel="noopener noreferrer">MOKI</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Creative Web Apps & Services</h1>
+      <p>DMK Studio는 인터랙티브 웹 애플리케이션, 유용한 크리에이티브 도구 및 디지털 미디어 서비스를 제작합니다.</p>
+    </section>
+
+    <div class="section-title">🚀 Featured Projects & Network</div>
+    <div class="grid">
+      <!-- ChordHelper Card -->
+      <a href="https://chordhelper.createdmk.com/" target="_blank" rel="noopener noreferrer" class="card">
+        <div>
+          <div class="card-tag">Music & Harmony</div>
+          <h2>🎹 ChordHelper</h2>
+          <p>원형 노드 그래프 기반으로 직관적인 화성 진행을 설계하고, 고급 텐션 보이싱 및 12Key 전조 사운드를 실시간으로 탐색할 수 있는 인터랙티브 코드 빌더 도구입니다.</p>
+        </div>
+        <div class="card-footer">
+          <span>웹앱 바로가기</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- EMAG01 Card -->
+      <a href="https://emag01.com/" target="_blank" rel="noopener noreferrer" class="card">
+        <div>
+          <div class="card-tag" style="color: #a855f7;">Digital Media & Web</div>
+          <h2>📰 EMAG01</h2>
+          <p>다양한 트렌드, IT 테크, 유용한 라이프 정보와 디지털 콘텐츠를 제공하는 온라인 매거진 및 정보 허브 플랫폼입니다.</p>
+        </div>
+        <div class="card-footer" style="color: #a855f7;">
+          <span>사이트 바로가기</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- MOKI Card -->
+      <a href="https://moki.createdmk.com/" target="_blank" rel="noopener noreferrer" class="card">
+        <div>
+          <div class="card-tag" style="color: #10b981;">Creative Platform</div>
+          <h2>✨ MOKI</h2>
+          <p>사용자 편의성을 극대화한 실용적 웹 유틸리티와 창의적인 솔루션을 제공하는 디지털 크리에이티브 서비스입니다.</p>
+        </div>
+        <div class="card-footer" style="color: #10b981;">
+          <span>사이트 바로가기</span>
+          <span>→</span>
+        </div>
+      </a>
+    </div>
+
+    <section class="about-box">
+      <h3>About DMK Studio</h3>
+      <p>DMK Studio는 웹 표준 기술(HTML5, Canvas, Web Audio API 등)을 바탕으로 별도의 설치 없이 브라우저에서 즉시 활용 가능한 고성능 웹 애플리케이션과 유용한 온라인 서비스를 지속적으로 개발·운영하고 있습니다.</p>
+      <p>음악 화성학 학습 툴부터 전문 지식 콘텐츠 허브까지, 사용자 경험(UX) 중심의 다채로운 디지털 프로젝트를 확장해 나갑니다.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://createdmk.com/">Home</a>
+      <a href="https://chordhelper.createdmk.com/" target="_blank" rel="noopener noreferrer">ChordHelper</a>
+      <a href="https://emag01.com/" target="_blank" rel="noopener noreferrer">EMAG01</a>
+      <a href="https://moki.createdmk.com/" target="_blank" rel="noopener noreferrer">MOKI</a>
+    </div>
+    <p>&copy; 2026 DMK Studio (createdmk.com). All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
