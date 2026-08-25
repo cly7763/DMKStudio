@@ -2,14 +2,14 @@
 <html lang="ko">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-95BE6M9EBH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-95BE6M9EBH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-95BE6M9EBH');
-</script>
+    gtag('config', 'G-95BE6M9EBH');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DMK Studio - Creative Web Apps & Tools</title>
@@ -63,6 +63,11 @@
       padding: 2px 6px;
       border-radius: 4px;
     }
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
     nav {
       display: flex;
       gap: 18px;
@@ -77,6 +82,32 @@
     nav a:hover {
       color: #38bdf8;
     }
+
+    /* 언어 선택 스위처 스타일 */
+    .lang-switcher {
+      display: flex;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 20px;
+      padding: 2px;
+      gap: 2px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 16px;
+      transition: all 0.2s ease;
+    }
+    .lang-btn.active {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -91,10 +122,16 @@
       font-size: 2.8rem;
       font-weight: 900;
       letter-spacing: -0.03em;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
       background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+    .hero h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #38bdf8;
+      margin-bottom: 16px;
     }
     .hero p {
       font-size: 1.15rem;
@@ -144,7 +181,7 @@
       letter-spacing: 0.05em;
       margin-bottom: 8px;
     }
-    .card h2 {
+    .card h3 {
       font-size: 1.3rem;
       font-weight: 700;
       margin-bottom: 8px;
@@ -213,31 +250,38 @@
       <span>DMK STUDIO</span>
       <span class="logo-badge">LAB</span>
     </div>
-    <nav>
-      <a href="https://chordhelper.createdmk.com/" target="_blank" rel="noopener noreferrer">ChordHelper</a>
-      <a href="https://emag.createdmk.com/" target="_blank" rel="noopener noreferrer">EMAG</a>
-      <a href="https://moki.createdmk.com/" target="_blank" rel="noopener noreferrer">MOKI</a>
-    </nav>
+    <div class="nav-wrapper">
+      <nav>
+        <a href="https://chordhelper.createdmk.com/" target="_blank" rel="noopener noreferrer">ChordHelper</a>
+        <a href="https://emag.createdmk.com/" target="_blank" rel="noopener noreferrer">EMAG</a>
+        <a href="https://moki.createdmk.com/" target="_blank" rel="noopener noreferrer">MOKI(only Kor)</a>
+      </nav>
+      <!-- 언어 전환 버튼 -->
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLanguage('ko')" id="btn-ko">KOR</button>
+        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">ENG</button>
+      </div>
+    </div>
   </header>
 
   <main class="container">
     <section class="hero">
       <h1>DMK Studio</h1>
-      <h2>Creative Web Apps & Services</h2>
-      <p>DMK Studio는 인터랙티브 웹 애플리케이션, 유용한 크리에이티브 도구 및 디지털 미디어 서비스를 제작합니다.</p>
+      <h2 data-i18n="hero-sub">Creative Web Apps & Services</h2>
+      <p data-i18n="hero-desc">DMK Studio는 인터랙티브 웹 애플리케이션, 유용한 크리에이티브 도구 및 디지털 미디어 서비스를 제작합니다.</p>
     </section>
 
-    <div class="section-title">🚀 Featured Projects & Network</div>
+    <div class="section-title" data-i18n="section-title">🚀 Featured Projects & Network</div>
     <div class="grid">
       <!-- ChordHelper Card -->
       <a href="https://chordhelper.createdmk.com/" target="_blank" rel="noopener noreferrer" class="card">
         <div>
-          <div class="card-tag">Music & Harmony</div>
+          <div class="card-tag" data-i18n="tag-music">Music & Harmony</div>
           <h2>🎹 ChordHelper</h2>
-          <p>직관적으로 코드 진행의 제작을 도와주고, 텐션 보이싱 및 12Key 전조 사운드를 실시간으로 확인할 수 있는 인터랙티브 코드 진행 제작 도구입니다.</p>
+          <p data-i18n="chordhelper-desc">직관적으로 코드 진행의 제작을 도와주고, 텐션 보이싱 및 12Key 전조 사운드를 실시간으로 확인할 수 있는 인터랙티브 코드 진행 제작 도구입니다.</p>
         </div>
         <div class="card-footer">
-          <span>웹앱 바로가기</span>
+          <span data-i18n="btn-launch-app">웹앱 바로가기</span>
           <span>→</span>
         </div>
       </a>
@@ -245,13 +289,12 @@
       <!-- EMAG Card -->
       <a href="https://emag.createdmk.com/" target="_blank" rel="noopener noreferrer" class="card">
         <div>
-          <div class="card-tag" style="color: #a855f7;">Digital Media & Web</div>
+          <div class="card-tag" style="color: #a855f7;" data-i18n="tag-media">Digital Media & Web</div>
           <h2>📰 EMAG</h2>
-          <p>다양한 게임의 공략 및 시뮬레이터 정보를 제공하는 게임 정보 플랫폼입니다.
-          </p>
+          <p data-i18n="emag-desc">다양한 게임의 공략 및 시뮬레이터 정보를 제공하는 게임 정보 플랫폼입니다.</p>
         </div>
         <div class="card-footer" style="color: #a855f7;">
-          <span>사이트 바로가기</span>
+          <span data-i18n="btn-visit-site">사이트 바로가기</span>
           <span>→</span>
         </div>
       </a>
@@ -259,20 +302,20 @@
       <!-- MOKI Card -->
       <a href="https://moki.createdmk.com/" target="_blank" rel="noopener noreferrer" class="card">
         <div>
-          <div class="card-tag" style="color: #10b981;">Creative Platform</div>
-          <h2>✨ MOKI</h2>
-          <p>경제 및 금융의 편리한 계산을 도와줄 웹애플리케이션 서비스입니다.</p>
+          <div class="card-tag" style="color: #10b981;" data-i18n="tag-platform">Creative Platform</div>
+          <h2>✨ MOKI(only Kor)</h2>
+          <p data-i18n="moki-desc">경제 및 금융의 편리한 계산을 도와줄 웹애플리케이션 서비스입니다.</p>
         </div>
         <div class="card-footer" style="color: #10b981;">
-          <span>사이트 바로가기</span>
+          <span data-i18n="btn-visit-site">사이트 바로가기</span>
           <span>→</span>
         </div>
       </a>
     </div>
 
     <section class="about-box">
-      <h3>About DMK Studio</h3>
-      <p>DMK Studio는 웹 표준 기술(HTML5, Canvas, Web Audio API 등)을 바탕으로 별도의 설치 없이 브라우저에서 즉시 활용 가능한 고성능 웹 애플리케이션과 유용한 온라인 서비스를 지속적으로 개발·운영하고 있습니다.</p>
+      <h3 data-i18n="about-title">About DMK Studio</h3>
+      <p data-i18n="about-desc">DMK Studio는 웹 표준 기술(HTML5, Canvas, Web Audio API 등)을 바탕으로 별도의 설치 없이 브라우저에서 즉시 활용 가능한 고성능 웹 애플리케이션과 유용한 온라인 서비스를 지속적으로 개발·운영하고 있습니다.</p>
     </section>
   </main>
 
@@ -281,10 +324,72 @@
       <a href="https://createdmk.com/">Home</a>
       <a href="https://chordhelper.createdmk.com/" target="_blank" rel="noopener noreferrer">ChordHelper</a>
       <a href="https://emag.createdmk.com/" target="_blank" rel="noopener noreferrer">EMAG</a>
-      <a href="https://moki.createdmk.com/" target="_blank" rel="noopener noreferrer">MOKI</a>
+      <a href="https://moki.createdmk.com/" target="_blank" rel="noopener noreferrer">MOKI(only Kor)</a>
     </div>
     <p>&copy; 2026 DMK Studio (createdmk.com). All rights reserved.</p>
   </footer>
+
+  <script>
+    const translations = {
+      ko: {
+        "hero-sub": "Creative Web Apps & Services",
+        "hero-desc": "DMK Studio는 인터랙티브 웹 애플리케이션, 유용한 크리에이티브 도구 및 디지털 미디어 서비스를 제작합니다.",
+        "section-title": "🚀 Featured Projects & Network",
+        "tag-music": "Music & Harmony",
+        "tag-media": "Digital Media & Web",
+        "tag-platform": "Creative Platform",
+        "chordhelper-desc": "직관적으로 코드 진행의 제작을 도와주고, 텐션 보이싱 및 12Key 전조 사운드를 실시간으로 확인할 수 있는 인터랙티브 코드 진행 제작 도구입니다.",
+        "emag-desc": "다양한 게임의 공략 및 시뮬레이터 정보를 제공하는 게임 정보 플랫폼입니다.",
+        "moki-desc": "경제 및 금융의 편리한 계산을 도와줄 웹애플리케이션 서비스입니다.",
+        "btn-launch-app": "웹앱 바로가기",
+        "btn-visit-site": "사이트 바로가기",
+        "about-title": "About DMK Studio",
+        "about-desc": "DMK Studio는 웹 표준 기술(HTML5, Canvas, Web Audio API 등)을 바탕으로 별도의 설치 없이 브라우저에서 즉시 활용 가능한 고성능 웹 애플리케이션과 유용한 온라인 서비스를 지속적으로 개발·운영하고 있습니다."
+      },
+      en: {
+        "hero-sub": "Creative Web Apps & Services",
+        "hero-desc": "DMK Studio creates interactive web applications, creative utilities, and digital media platforms.",
+        "section-title": "🚀 Featured Projects & Network",
+        "tag-music": "Music & Harmony",
+        "tag-media": "Digital Media & Web",
+        "tag-platform": "Creative Platform",
+        "chordhelper-desc": "An interactive chord progression builder featuring intuitive harmony workflows, tension voicing, and real-time 12-key transposition playback.",
+        "emag-desc": "A gaming knowledge hub offering in-depth walkthroughs, strategies, and interactive game simulators.",
+        "moki-desc": "A streamlined financial and economic web application for instant, smart calculations.",
+        "btn-launch-app": "Launch App",
+        "btn-visit-site": "Visit Site",
+        "about-title": "About DMK Studio",
+        "about-desc": "Built with modern web standards (HTML5, Canvas, Web Audio API), DMK Studio builds high-performance, browser-native applications and creative online tools accessible without installation."
+      }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      
+      localStorage.setItem('preferred-lang', lang);
+    }
+
+    // 기본 언어 세팅 (저장된 설정 확인 또는 브라우저 언어 감지)
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('preferred-lang');
+      if (savedLang) {
+        setLanguage(savedLang);
+      } else {
+        const userLang = navigator.language || navigator.userLanguage;
+        setLanguage(userLang.startsWith('ko') ? 'ko' : 'en');
+      }
+    });
+  </script>
 
 </body>
 </html>
