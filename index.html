@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DMK Studio - Creative Web Apps & Tools</title>
-  <meta name="description" content="DMK Studio - 웹 기반 음악 화성학 도구, 생산성 유틸리티, 미디어 콘텐츠 및 창의적인 웹 서비스를 제작하는 크리에이티브 스튜디오입니다." />
+  <meta name="description" content="DMK Studio - 웹 기반 음악 화성학 도구, 생산성 유틸리티, 헬스/건강 가이드, 미디어 콘텐츠 및 창의적인 웹 서비스를 제작하는 크리에이티브 스튜디오입니다." />
   <link rel="canonical" href="https://createdmk.com/" />
 
   <!-- 애드센스 코드 (필요 시 주석 해제) -->
@@ -181,7 +181,7 @@
       letter-spacing: 0.05em;
       margin-bottom: 8px;
     }
-    .card h3 {
+    .card h2 {
       font-size: 1.3rem;
       font-weight: 700;
       margin-bottom: 8px;
@@ -255,6 +255,7 @@
         <a href="https://chordhelper.createdmk.com/" target="_blank" rel="noopener noreferrer">ChordHelper</a>
         <a href="https://emag.createdmk.com/" target="_blank" rel="noopener noreferrer">EMAG</a>
         <a href="https://moki.createdmk.com/" target="_blank" rel="noopener noreferrer">MOKI(only Kor)</a>
+        <a href="https://myhealthtime.createdmk.com/" target="_blank" rel="noopener noreferrer">MyHealthTime</a>
       </nav>
       <!-- 언어 전환 버튼 -->
       <div class="lang-switcher">
@@ -311,6 +312,19 @@
           <span>→</span>
         </div>
       </a>
+
+      <!-- MyHealthTime Card -->
+      <a href="https://myhealthtime.createdmk.com/" target="_blank" rel="noopener noreferrer" class="card">
+        <div>
+          <div class="card-tag" style="color: #f43f5e;" data-i18n="tag-health">Health & Fitness</div>
+          <h2>⏱️ MyHealthTime</h2>
+          <p data-i18n="health-desc">체계적인 운동 루틴 관리와 영양 및 칼로리 계산을 돕는 헬스·피트니스 가이드 웹 서비스입니다.</p>
+        </div>
+        <div class="card-footer" style="color: #f43f5e;">
+          <span data-i18n="btn-visit-site">사이트 바로가기</span>
+          <span>→</span>
+        </div>
+      </a>
     </div>
 
     <section class="about-box">
@@ -325,6 +339,7 @@
       <a href="https://chordhelper.createdmk.com/" target="_blank" rel="noopener noreferrer">ChordHelper</a>
       <a href="https://emag.createdmk.com/" target="_blank" rel="noopener noreferrer">EMAG</a>
       <a href="https://moki.createdmk.com/" target="_blank" rel="noopener noreferrer">MOKI(only Kor)</a>
+      <a href="https://myhealthtime.createdmk.com/" target="_blank" rel="noopener noreferrer">MyHealthTime</a>
     </div>
     <p>&copy; 2026 DMK Studio (createdmk.com). All rights reserved.</p>
   </footer>
@@ -338,9 +353,11 @@
         "tag-music": "Music & Harmony",
         "tag-media": "Digital Media & Web",
         "tag-platform": "Creative Platform",
+        "tag-health": "Health & Fitness",
         "chordhelper-desc": "직관적으로 코드 진행의 제작을 도와주고, 텐션 보이싱 및 12Key 전조 사운드를 실시간으로 확인할 수 있는 인터랙티브 코드 진행 제작 도구입니다.",
         "emag-desc": "다양한 게임의 공략 및 시뮬레이터 정보를 제공하는 게임 정보 플랫폼입니다.",
         "moki-desc": "경제 및 금융의 편리한 계산을 도와줄 웹애플리케이션 서비스입니다.",
+        "health-desc": "체계적인 운동 루틴 관리와 영양 및 칼로리 계산을 돕는 헬스·피트니스 가이드 웹 서비스입니다.",
         "btn-launch-app": "웹앱 바로가기",
         "btn-visit-site": "사이트 바로가기",
         "about-title": "About DMK Studio",
@@ -353,9 +370,11 @@
         "tag-music": "Music & Harmony",
         "tag-media": "Digital Media & Web",
         "tag-platform": "Creative Platform",
+        "tag-health": "Health & Fitness",
         "chordhelper-desc": "An interactive chord progression builder featuring intuitive harmony workflows, tension voicing, and real-time 12-key transposition playback.",
         "emag-desc": "A gaming knowledge hub offering in-depth walkthroughs, strategies, and interactive game simulators.",
         "moki-desc": "A streamlined financial and economic web application for instant, smart calculations.",
+        "health-desc": "A dedicated health & fitness utility platform for workout routines, diet tracking, and nutrition calculation.",
         "btn-launch-app": "Launch App",
         "btn-visit-site": "Visit Site",
         "about-title": "About DMK Studio",
@@ -379,7 +398,7 @@
       localStorage.setItem('preferred-lang', lang);
     }
 
-    // 기본 언어 세팅 (저장된 설정 확인 또는 브라우저 언어 감지)
+    // 기본 언어 세팅
     document.addEventListener('DOMContentLoaded', () => {
       const savedLang = localStorage.getItem('preferred-lang');
       if (savedLang) {
